@@ -1,28 +1,19 @@
-import { expect, describe, it } from 'vitest'
+import { expect, describe, it, beforeEach } from 'vitest'
 import { RegisterUseCase } from './register'
 import { compare } from 'bcryptjs'
 import { InMemoryUsersRepository } from '@/repositories/in-memory/in-memory-users-repository'
 import { UserAlreadyExistsError } from './errors/user-already-exists'
 
-describe('Register User Password Case', () => {
+let usersRepository: InMemoryUsersRepository
+let sut: RegisterUseCase
+
+describe('Register Use Case', () => {
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository()
+    sut = new RegisterUseCase(usersRepository)
+  })
   it('should hash user password upon registration', async () => {
-    const registerUseCase = new RegisterUseCase({
-      async findByEmail(email) {
-        return null
-      },
-
-      async create(data) {
-        return {
-          id: 'user-1',
-          name: data.name,
-          email: data.email,
-          password_hash: data.password_hash,
-          created_at: new Date(),
-        }
-      },
-    })
-
-    const { user } = await registerUseCase.execute({
+    const { user } = await sut.execute({
       name: 'Vinícius Souza',
       email: 'viniciussouzasatos@example.com',
       password: 'bardufs',
@@ -35,23 +26,18 @@ describe('Register User Password Case', () => {
 
     expect(isPasswordCorrectlyHashed).toBe(true)
   })
-})
 
-describe('Register Use Case', () => {
-  it('should hash user password upon registration', async () => {
-    const usersRepository = new InMemoryUsersRepository()
-    const registerUseCase = new RegisterUseCase(usersRepository)
-
+  it('should not be able to register the same email twice', async () => {
     const email = 'viniciussouzasatos@example.com'
 
-    await registerUseCase.execute({
+    await sut.execute({
       name: 'Vinícius Souza',
       email,
       password: 'bardufs',
     })
 
-    expect(() =>
-      registerUseCase.execute({
+    await expect(() =>
+      sut.execute({
         name: 'Vinícius Souza',
         email,
         password: 'bardufs',
