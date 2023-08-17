@@ -6,7 +6,7 @@
 
 - [X] it should be possible to register;
 - [X] it should be possible to authenticate;
-- [ ] it should be possible to get logged profile;
+- [X] it should be possible to get logged profile;
 - [ ] it should be possible to get number of check-ins performed by the logged-in user;
 - [ ] it should be possible the user obtains your check-ins history;
 - [ ] it should be possible the user get nearby gyms;

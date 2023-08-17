@@ -26,9 +26,8 @@ describe('Register Use Case', () => {
     expect(user.id).toEqual(expect.any(String))
     expect(user.name).toEqual('John Doe')
   })
-
   it('should not be able to get user profile', async () => {
-    expect(() =>
+    await expect(() =>
       sut.execute({ userId: 'non-existing-id' }),
     ).rejects.toBeInstanceOf(ResourceNotFoundError)
   })
