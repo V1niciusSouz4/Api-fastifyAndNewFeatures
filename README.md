@@ -11,7 +11,7 @@
 - [ ] it should be possible the user obtains your check-ins history;
 - [ ] it should be possible the user get nearby gyms;
 - [ ] it should be possible the user get gyms by name;
-- [ ] it should be possible the user make check-in in your gym;
+- [X] it should be possible the user make check-in in your gym;
 - [ ] it should be possible validate the check-in of one user;
 - [ ] it should be possible to register a gym;
 
