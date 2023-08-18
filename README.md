@@ -19,8 +19,8 @@
 ## Rn (business rules)
 
 - [x] The user cannot register with an existing email;
-- [ ] The user cannot make two check-ins in the same day;
-- [ ] The user cannot make the check-in if he is not closer 100m of the gym;
+- [x] The user cannot make two check-ins in the same day;
+- [x] The user cannot make the check-in if he is not closer 100m of the gym;
 - [ ] The check-in just can be validated until twenty minutes after created;
 - [ ] The check-in just can be valitaded by admins;
 - [ ] The gym just can be registerd by admins;
