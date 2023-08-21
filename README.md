@@ -8,12 +8,12 @@
 - [X] it should be possible to authenticate;
 - [X] it should be possible to get logged profile;
 - [ ] it should be possible to get number of check-ins performed by the logged-in user;
-- [ ] it should be possible the user obtains your check-ins history;
+- [X] it should be possible the user obtains your check-ins history;
 - [ ] it should be possible the user get nearby gyms;
 - [ ] it should be possible the user get gyms by name;
 - [X] it should be possible the user make check-in in your gym;
 - [ ] it should be possible validate the check-in of one user;
-- [ ] it should be possible to register a gym;
+- [X] it should be possible to register a gym;
 
 
 ## Rn (business rules)
@@ -28,6 +28,6 @@
 ## RFNs (unfunctional requirements)
 
 - [x] the user password needs be encrypted;
-- [ ] The data of application needs be in a postgresSQL database;
-- [ ] All lists od data should be paginated with twenty or more itens by page;
+- [x] The data of application needs be in a postgresSQL database;
+- [x] All lists od data should be paginated with twenty or more itens by page;
 - [ ] The user should be identified by a JWT (Json Web Token);
