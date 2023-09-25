@@ -3,11 +3,11 @@ version: '3.8'
 services:
   postgres-database:
     image: postgres
-    container_name: 'project-RocketSeat'
+    container_name: ''
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: root
+      POSTGRES_PASSWORD: 
     networks:
       - backend
 
@@ -17,8 +17,8 @@ services:
     ports:
       - "8080:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_DEFAULT_EMAIL:
+      PGADMIN_DEFAULT_PASSWORD: 
     networks:
       - backend
 
